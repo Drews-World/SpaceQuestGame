@@ -1,0 +1,265 @@
+body {
+  background-image: url('images/planet2.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 1080px;
+  width: 720px;
+}
+
+.astro {
+  position: absolute;
+  top: 40vh;
+  left: 40vw;
+  transform: scale(0.75);
+  animation-name: fadeOutAstro;
+  animation-duration: 2.2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+.astro2 {
+  position: absolute;
+  top: 40vh;
+  left: 40vw;
+  transform: scale(0.75);
+  animation-name: moveAstro;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-delay: 2.2s;
+  position: absolute;
+  animation-fill-mode: forwards;
+}
+.astros {
+  visibility: hidden;
+}
+.aliens {
+  position: absolute;
+}
+.laser1,
+.laser2,
+.laser3,
+.laser4,
+.laser5,
+.laser6 {
+  animation-name: moveLasers;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-delay: 2.2s;
+
+  position: absolute;
+  animation-fill-mode: forwards;
+}
+.lasers {
+  visibility: hidden;
+}
+
+.alien1,
+.alien2,
+.alien3,
+.alien4 {
+  animation-name: moveAliens;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-delay: 4s;
+
+  position: absolute;
+  animation-fill-mode: forwards;
+}
+
+.alien1 {
+  position: absolute;
+  top: -4vh;
+  left: 70vw;
+  transform: scale(0.25);
+}
+.alien2 {
+  position: absolute;
+  top: -4vh;
+  left: 66vw;
+  transform: scale(0.25);
+}
+.alien3 {
+  position: absolute;
+  top: -4vh;
+  left: 62vw;
+  transform: scale(0.25);
+}
+.alien4 {
+  position: absolute;
+  top: -4vh;
+  left: 73vw;
+  transform: scale(0.25);
+}
+.laser1 {
+  position: absolute;
+  top: 50vh;
+  left: 56vw;
+  transform: scale(0.2);
+}
+.laser2 {
+  position: absolute;
+  top: 48vh;
+  left: 58vw;
+  transform: scale(0.2);
+}
+.laser3 {
+  position: absolute;
+  top: 53vh;
+  left: 62vw;
+  transform: scale(0.2);
+}
+.laser4 {
+  position: absolute;
+  top: 52vh;
+  left: 57vw;
+  transform: scale(0.2);
+}
+.laser5 {
+  position: absolute;
+  top: 46vh;
+  left: 51vw;
+  transform: scale(0.2);
+}
+.laser6 {
+  position: absolute;
+  top: 50vh;
+  left: 49vw;
+  transform: scale(0.2);
+}
+
+@keyframes moveLasers {
+  0% {
+    visibility: hidden;
+    transform: translateX(35%) scale(0.2);
+  }
+  1% {
+    visibility: visible;
+  }
+  20% {
+    transform: translateX(35%) scale(0.2);
+  }
+  100% {
+    transform: translateX(-250%) scale(0.2);
+  }
+}
+@keyframes fadeOutAstro {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes moveAstro {
+  0% {
+    opacity: 0; /* Start with astro2 invisible */
+    visibility: hidden;
+    transform: translateX(0%) scale(0.75); /* Starting position */
+  }
+  1% {
+    opacity: 1; /* Quickly bring astro2 to full visibility */
+    visibility: visible;
+  }
+  20% {
+    transform: translateX(0%) scale(0.75);
+  }
+  100% {
+    transform: translateX(-250%) scale(0.75);
+  }
+}
+
+@keyframes moveAliens {
+  20% {
+    transform: translateX(0%) scale(0.25);
+  }
+  100% {
+    transform: translateX(-300%) scale(0.25);
+  }
+}
+
+.logo {
+  position: absolute;
+  scale: 20%;
+  bottom: 65%;
+  left: 75%;
+}
+
+.continuebutton {
+  padding: 1.5em 2em;
+  border: none;
+  outline: none;
+  color: white;
+  background: none;
+  background-color: black;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  left: 190%;
+  top: 20%;
+}
+
+.continuebutton1 {
+  border: none;
+  background-color: black;
+  text-align: center;
+  font-size: large;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+.continuebutton:before {
+  content: '';
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: continuebuttonani 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes continuebuttonani {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.continuebutton:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
