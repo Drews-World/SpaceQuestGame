@@ -1,0 +1,159 @@
+body {
+  color: black;
+  background-image: url('ASSETS/space.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  font-family: Verdana, Helvetica, sans-serif;
+  font-size: 8px;
+}
+
+h1 {
+  font-size: 15px;
+  color: white;
+}
+
+.title {
+  display: block;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  animation: pulse 5s infinite alternate;
+}
+
+.start {
+  display: block;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  animation: pulse 5s infinite alternate;
+}
+
+.list {
+  list-style-type: none;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 10pt;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.list li {
+  margin-bottom: 5px;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fly {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+  animation: fly 30s linear infinite;
+}
+
+.fade {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 25%;
+  opacity: 1;
+  animation: fadeIn 15s ease-in-out forwards;
+}
+
+.container2 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.planet {
+  transform: scale(1.2);
+  position: absolute;
+  transition: transform 0.5s, width 0.5s;
+}
+
+.planet:nth-child(1) {
+  top: 20%;
+  left: 15%;
+}
+
+.planet:nth-child(2) {
+  top: 20%;
+  right: 15%;
+}
+
+.planet:nth-child(3) {
+  bottom: 14%;
+  left: 40%;
+}
+
+.planet:hover {
+  transform: scale(1.4) rotate(15deg);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+    left: 5%;
+    top: 50%;
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.7);
+    left: 85%;
+    top: 20%;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(2.2);
+    left: 55%;
+    top: 40%;
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.7);
+    left: 25%;
+    top: 70%;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+    left: 5%;
+    top: 50%;
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.03);
+  }
+}
+
+.logo {
+  position: absolute;
+  scale: 20%;
+  bottom: 65%;
+  left: 75%;
+}
